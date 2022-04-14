@@ -1,0 +1,23 @@
+{
+  "name": "discord-to-server",
+  "version": "1.0.0",
+  "description": "discord-ubuntu",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nogy1op/discord-to-server.git"
+  },
+  "author": "nogie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nogy1op/discord-to-server/issues"
+  },
+  "homepage": "https://github.com/nogy1op/discord-to-server#readme",
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "nodemon": "^2.0.15"
+  }
+}
