@@ -1,0 +1,6 @@
+{
+    "prefix":"!",
+    "bot_token":"token 입력",
+    "clientId":"client ID 입력",
+    "guildId":"guild ID 입력"
+}
