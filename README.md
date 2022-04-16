@@ -13,7 +13,7 @@
 2. 반복문을 이용해 각 command file을 import 하여 object 형식의 데이터를 json 형식으로 바꾼 후  command list에 push 해줌
 3. applicationGuildCommands를 통해 discord API로 전송
 
-```json
+```jsx
 **API Server로 보내는 commands list**
 
 [
