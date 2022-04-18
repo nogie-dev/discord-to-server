@@ -15,3 +15,4 @@
     > [https://www.npmjs.com/package/node-ssh](https://www.npmjs.com/package/node-ssh)
     > 
 - event 처리 사용가능성 평가 필요
+- dockerfile을 이용한 빠른 시스템 구축
