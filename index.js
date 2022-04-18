@@ -1,6 +1,5 @@
-const myEvent=require('./ssh/sshConnect')
-
-console.log(myEvent)
+//const myEvent=require('./ssh/sshConnect')
+const toServer=require('./ssh/testConnect')
 
 const fs=require('node:fs')
 const {prefix,bot_token}=require('./config/config.json')
@@ -26,6 +25,10 @@ client.on('interactionCreate', async interaction => {
      //존재하는 슬래시 명령어로 들어오면 key 매칭
     const command = client.commands.get(interaction.commandName);
 
+
+    const username=interaction.user.username.toLowerCase()+"-terminal"
+    console.log(interaction.channel.name)
+
      //command가 없을 경우 무반응
     if (!command) return;
 
@@ -43,8 +46,18 @@ client.on('messageCreate', async msg=>{
     if(!msg.guild) return
     //메세지가 bot이 보낸거라면 무시
     if(msg.author.bot) return
-    
-    myEvent.emit('haha')
+    const username=msg.member['user']['username'].toLowerCase()+'-terminal'
+    if(msg.channel.name!=username){
+        msg.reply(':no_entry_sign: There is not your terminal channel')
+    }else{
+    const returnShell=await toServer.test(msg.content)
+
+        if(returnShell['stderr']){
+            msg.reply('```'+returnShell['stderr']+'```')
+        }else{
+            msg.reply('```'+returnShell['stdout']+'```')
+        }
+    }
 })
 
 client.login(bot_token);
